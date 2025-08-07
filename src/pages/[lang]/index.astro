@@ -1,0 +1,27 @@
+---
+export function getStaticPaths() {
+  return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
+}
+
+import About from "../../components/About.astro";
+import Hero from "../../components/Hero.astro";
+import Projects from "../../components/Projects.astro";
+import Stack from "../../components/Stack.astro";
+import { getContent } from "../../data/language";
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+
+const lang = Astro.params.lang ?? "es";
+const { content: SITE_CONTENT, config } = getContent(lang);
+---
+
+<Layout config={config}>
+  <Hero {...SITE_CONTENT.hero} />
+  <Projects
+    buttonsProject={SITE_CONTENT.buttonsProject}
+    title={SITE_CONTENT.sectionTitles.projects}
+    projects={SITE_CONTENT.projects}
+  />
+  <Stack title={SITE_CONTENT.sectionTitles.stack} stack={SITE_CONTENT.stack} />
+  <About title={SITE_CONTENT.sectionTitles.about} about={SITE_CONTENT.about} />
+</Layout>

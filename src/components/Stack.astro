@@ -1,0 +1,93 @@
+---
+import Section from "./Section.astro";
+import { TECH_MAP } from "../data/technologies";
+import type { StackProps } from "../data";
+
+interface Props {
+  stack: StackProps[];
+  title: string;
+}
+
+const { stack, title } = Astro.props;
+---
+
+<Section text={title} href="stack">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div
+      class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-6"
+    >
+      <img
+        src="/icons/NET.svg"
+        alt=".NET Core"
+        title=".NET Core"
+        class="col-span-2 max-h-16 w-full object-contain lg:col-span-1 grayscale hover:grayscale-0 transition duration-300"
+      />
+      <img
+        src="/icons/Node.js.svg"
+        alt="Node.js"
+        title="Node.js"
+        class="col-span-2 max-h-24 w-full object-contain lg:col-span-1 grayscale hover:grayscale-0 transition duration-300"
+      />
+      <img
+        src="/icons/nestjs.svg"
+        alt="NestJS"
+        title="NestJS"
+        class="col-span-2 max-h-16 w-full object-contain lg:col-span-1 grayscale hover:grayscale-0 transition duration-300"
+      />
+      <img
+        src="/icons/Angular.svg"
+        alt="Angular"
+        title="Angular"
+        class="col-span-2 max-h-16 w-full object-contain lg:col-span-1 grayscale hover:grayscale-0 transition duration-300"
+      />
+      <img
+        src="/icons/Astro.svg"
+        alt="Astro"
+        title="Astro"
+        class="col-span-2 max-h-16 w-full object-contain lg:col-span-1 grayscale hover:grayscale-0 transition duration-300"
+      />
+      <img
+        src="/icons/Tailwind.svg"
+        alt="TailwindCSS"
+        title="TailwindCSS"
+        class="col-span-2 max-h-16 w-full object-contain lg:col-span-1 grayscale hover:grayscale-0 transition duration-300"
+      />
+      <img
+        src="/icons/TypeScript.svg"
+        alt="TypeScript"
+        title="TypeScript"
+        class="col-span-2 max-h-16 w-full object-contain lg:col-span-1 grayscale hover:grayscale-0 transition duration-300"
+      />
+      <img
+        src="/icons/SqlServer.svg"
+        alt="SQL Server"
+        title="SQL Server"
+        class="col-span-2 max-h-24 w-full object-contain lg:col-span-1 grayscale hover:grayscale-0 transition duration-300"
+      />
+      <img
+        src="/icons/PostgreSQL.svg"
+        alt="PostgreSQL"
+        title="PostgreSQL"
+        class="col-span-2 max-h-16 w-full object-contain lg:col-span-1 grayscale hover:grayscale-0 transition duration-300"
+      />
+      <img
+        src="/icons/Docker.svg"
+        alt="Docker"
+        title="Docker"
+        class="col-span-2 max-h-16 w-full object-contain lg:col-span-1 grayscale hover:grayscale-0 transition duration-300"
+      />
+      <img
+        src="/icons/rabbit.svg"
+        alt="Rabbit"
+        title="Rabbit"
+        class="col-span-2 max-h-16 w-full object-contain lg:col-span-1 grayscale hover:grayscale-0 transition duration-300"
+      />
+      <img
+        src="/icons/redis.svg"
+        alt="Redis"
+        title="Redis"
+        class="col-span-2 max-h-16 w-full object-contain lg:col-span-1 grayscale hover:grayscale-0 transition duration-300"
+      />
+    </div>
+  </div>
+</Section>

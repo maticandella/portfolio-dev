@@ -1,0 +1,14 @@
+export const TECH_MAP = {
+  Astro: { icon: "/icons/astro.svg", name: "Astro" },
+  TypeScript: { icon: "/icons/typescript.svg", name: "TypeScript" },
+  JavaScript: { icon: "/icons/javascript.svg", name: "JavaScript" },
+  Tailwind: { icon: "/icons/tailwind.svg", name: "TailwindCSS" },
+  Angular: { icon: "/icons/angular.svg", name: "Angular" },
+  "Node.js": { icon: "/icons/nodejs.svg", name: "Node.js" },
+  PostgreSQL: { icon: "/icons/postgresql.svg", name: "PostgreSQL" },
+  Swagger: { icon: "/icons/swagger.svg", name: "Swagger" },
+  ".NET": { icon: "/icons/.NET.svg", name: ".NET Core" },
+  "Nest.js": { icon: "/icons/nestjs.svg", name: "Nest.js" },
+  SqlServer: { icon: "/icons/sqlserver.svg", name: "SqlServer" },
+  Docker: { icon: "/icons/docker.svg", name: "Docker" },
+Vercel: { icon: "/icons/vercel.svg", name: "Vercel" }};

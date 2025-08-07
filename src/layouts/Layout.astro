@@ -1,0 +1,41 @@
+---
+import "@fontsource/be-vietnam-pro";
+import "@fontsource-variable/gabarito";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+// Recibe config como prop
+const { config } = Astro.props;
+
+const {
+  title,
+  description,
+  siteLogo,
+  navLinks,
+  lang,
+  author,
+  socialLinks,
+  socialImage,
+  canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
+} = config;
+---
+
+<!doctype html>
+<html lang={lang} class="scroll-smooth scroll-pt-16">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="author" content={author} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="font-sans bg-black">
+    <Header siteLogo={siteLogo} navLinks={navLinks} title={title} />
+    <main class="max-w-6xl px-5 mx-auto">
+      <slot />
+    </main>
+    <Footer author={author} socialLinks={socialLinks} />
+  </body>
+</html>

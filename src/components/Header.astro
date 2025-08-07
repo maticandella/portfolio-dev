@@ -1,0 +1,181 @@
+---
+import { Image } from "astro:assets";
+import Menu from "../icons/Menu.astro";
+const { siteLogo, navLinks, title } = Astro.props;
+
+import { getContent } from "../data/language";
+
+const { config } = getContent();
+---
+
+<header
+  class="max-w-6xl mx-auto flex justify-between px-5 py-6 top-0 z-50 sticky bg-black animate-slideIn"
+>
+  <div class="flex items-center gap-3">
+    <a href="/" aria-label="Home link">
+      <Image
+        class="rounded-full"
+        src={siteLogo}
+        width="45"
+        height="45"
+        alt="website logo"
+      />
+    </a>
+    <p class="text-white text-sm font-semibold">{title}</p>
+  </div>
+
+  <button
+    type="button"
+    id="menu-button"
+    class="sm:hidden text-neutral px-1.5"
+    aria-expanded="false"
+    aria-controls="main-menu"
+  >
+    <Menu />
+  </button>
+
+  <nav
+    class="hidden text-neutral border absolute right-5 top-20 bg-black border-neutral/40 py-5 px-4 rounded-xl sm:block sm:border-0 sm:p-0 sm:static sm:bg-transparent"
+    id="main-menu"
+  >
+    <ul class="sm:flex gap-2">
+      {
+        navLinks.map((link: any) => (
+          <li class="relative">
+            <a
+              class={`font-medium text-sm p-2 block hover:text-white duration-500 transition-all nav-item relative after:absolute after:opacity-0 after:content-['•'] after:w-1 after:h-2 after:bottom-0 after:left-2/4 after:-translate-x-2/4  after:text-primary`}
+              href={link.href}
+            >
+              {link.text}
+            </a>
+          </li>
+        ))
+      }
+      <li class="relative group">
+        <button
+          id="lang-switch"
+          class="font-medium text-sm p-2 block hover:text-white duration-500 transition-all nav-item relative after:absolute after:opacity-0 after:content-['•'] after:w-1 after:h-2 after:bottom-0 after:left-2/4 after:-translate-x-2/4 after:text-primary"
+        >
+          <span id="lang-label">ES</span>
+          ▼
+        </button>
+        <ul
+          id="lang-dropdown"
+          class="hidden absolute top-full right-0 bg-black border border-neutral/40 rounded-md shadow-md mt-1 group-hover:block z-50 min-w-[60px]"
+        >
+          <li>
+            <a
+              href="#"
+              data-lang="es"
+              class="block px-3 py-2 text-sm hover:text-white duration-300"
+              >ES</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              data-lang="en"
+              class="block px-3 py-2 text-sm hover:text-white duration-300"
+              >EN</a
+            >
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  // Toggle mobile menu
+  const button = document.querySelector("#menu-button");
+  const menu = document.querySelector("#main-menu");
+  const navItems = document.querySelectorAll("#main-menu > ul > li > a");
+
+  const toggleMenu = () => {
+    menu?.classList.toggle("hidden");
+    const isHidden = menu?.classList.contains("hidden");
+    button?.setAttribute("aria-expanded", `${!isHidden}`);
+  };
+
+  button?.addEventListener("click", toggleMenu);
+  navItems.forEach((item) => {
+    item?.addEventListener("click", toggleMenu);
+  });
+
+  // Update navigation based on scroll position with Intersection Observer
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("href") === `#${entry.target.id}`) {
+              item.classList.add("text-white", "md:after:opacity-100");
+            } else {
+              item.classList.remove("text-white", "md:after:opacity-100");
+            }
+          });
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  document.querySelectorAll("section").forEach((section) => {
+    observer.observe(section);
+  });
+
+  // Cleanup observer
+  document.onvisibilitychange = () => {
+    if (document.visibilityState === "hidden") {
+      observer.disconnect();
+    } else {
+      document.querySelectorAll("section").forEach((section) => {
+        observer.observe(section);
+      });
+    }
+  };
+
+  // Idioma actual
+  const langLabel = document.getElementById("lang-label") as HTMLSpanElement;
+  const langDropdown = document.getElementById("lang-dropdown");
+
+  function setLang(lang: string) {
+    localStorage.setItem("lang", lang);
+    window.location.pathname = `/${lang}`;
+  }
+
+  function getCurrentLang() {
+    // Detecta el idioma desde la URL
+    const pathLang = window.location.pathname.split("/")[1];
+    if (["es", "en"].includes(pathLang)) return pathLang;
+    return localStorage.getItem("lang") || "es";
+  }
+
+  function updateLangUI() {
+    const lang = getCurrentLang();
+    langLabel.textContent = lang.toUpperCase();
+    document.querySelectorAll("#lang-dropdown a").forEach((el) => {
+      el.classList.toggle("font-bold", el.getAttribute("data-lang") === lang);
+    });
+  }
+
+  document.querySelectorAll("#lang-dropdown a")?.forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      const newLang = el.getAttribute("data-lang");
+      if (newLang) {
+        localStorage.setItem("lang", newLang);
+        window.location.pathname = `/${newLang}`;
+      }
+    });
+  });
+
+  updateLangUI();
+</script>
+
+<style>
+  header {
+    animation-timeline: scroll();
+    animation-range: 0 650px;
+  }
+</style>
