@@ -1,4 +1,6 @@
 import type { SiteConfig, SiteContent } from "./index";
+const startYear = 2020;
+const yearsExperience = new Date().getFullYear() - startYear;
 
 export const SITE_CONFIG: SiteConfig = {
   title: "Mi Porfolio",
@@ -121,15 +123,36 @@ export const SITE_CONTENT: SiteContent = {
   ],
   stack: [],
   about: {
-    description: `
-      Hola, soy Matías Candella, desarrollador fullstack con un enfoque en la mejora continua, tanto a nivel personal como profesional. Disfruto trabajar en equipo, compartiendo conocimientos 
-      y aprendiendo de los demás.
-
-      Siempre busco desarrollar soluciones eficientes, seguras y escalables, haciendo mucho foco en el rendimiento y la usabilidad.
-      
-      Me considero un buen compañero, dispuesto a ayudar y a consultar cuando es necesario. Mi motivación es superar desafíos y encontrar nuevas formas de combinar creatividad y tecnología para ofrecer productos de calidad.
-    `,
-    image: "/maticandella.webp",
+    cards: [
+    {
+      title: "Experiencia",
+      subtitle: `+${yearsExperience} años en la industria`,
+      description:
+        "He trabajado como desarrollador en empresas del sector automotriz y consultoras, creando soluciones escalables, integraciones y APIs robustas. Cuento con experiencia participando en equipos colaborativos y enfocados en calidad de código.",
+        iconName: "portfolio"
+    },
+    {
+      title: "Educación",
+      subtitle: "Ingeniero en Sistemas",
+      description:
+        "Me he graduado en septiembre de 2024 de Ingeniero en Sistemas, presentando como trabajo final un sistema de cobranzas orientado a escuelas (.NET Core + Angular)."
+        , iconName: "hat"
+      },
+    {
+      title: "Pensamiento Crítico",
+      subtitle: "Análisis estratégico y objetivo",
+      description:
+        "Capacidad para evaluar información de manera lógica y tomar decisiones fundamentadas que aportan valor a proyectos y equipos."
+      ,iconName: "brain"
+      },
+    {
+      title: "Cultura Colaborativa",
+      subtitle: "Actitud positiva y motivadora",
+      description:
+        "Creo que trabajar con pasión y buen humor impulsa la creatividad y fortalece los equipos, generando un entorno de colaboración más humano y productivo."
+      ,iconName: "happy"
+      }
+  ]
   },
   sectionTitles: {
     projects: "Proyectos",

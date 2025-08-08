@@ -56,8 +56,7 @@ export interface ModalProps {
 }
 
 export interface AboutProps {
-  description: string;
-  image: string;
+  cards: AboutCardsProps[];
 }
 
 export interface HeaderProps {
@@ -68,4 +67,11 @@ export interface HeaderProps {
 export interface StackProps {
   icon: string;
   name: string;
+}
+
+export interface AboutCardsProps {
+  title: string;
+  subtitle: string;
+  description: string;
+  iconName: string;
 }

@@ -11,4 +11,6 @@ export const TECH_MAP = {
   "Nest.js": { icon: "/icons/nestjs.svg", name: "Nest.js" },
   SqlServer: { icon: "/icons/sqlserver.svg", name: "SqlServer" },
   Docker: { icon: "/icons/docker.svg", name: "Docker" },
-Vercel: { icon: "/icons/vercel.svg", name: "Vercel" }};
+Vercel: { icon: "/icons/vercel.svg", name: "Vercel" },
+GitHub: { icon: "/icons/github.svg", name: "GitHub" },
+HTML5: { icon: "/icons/html.svg", name: "HTML5" }};

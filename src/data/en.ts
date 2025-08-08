@@ -1,4 +1,6 @@
 import type { SiteConfig, SiteContent } from "./index";
+const startYear = 2020;
+const yearsExperience = new Date().getFullYear() - startYear;
 
 export const SITE_CONFIG: SiteConfig = {
   title: "My Portfolio",
@@ -120,15 +122,36 @@ export const SITE_CONTENT: SiteContent = {
   ],
   stack: [],
   about: {
-    description: `
-      Hi, I'm Matías Candella — a fullstack developer focused on continuous improvement, both personally and professionally. I enjoy working in teams, sharing knowledge,
-      and learning from others.
-
-      I'm always striving to develop efficient, secure, and scalable solutions, with strong emphasis on performance and usability.
-      
-      I consider myself a collaborative teammate, always willing to help and ask when needed. I'm motivated by challenges and constantly seek new ways to combine creativity and technology to deliver high-quality products.
-    `,
-    image: "/maticandella.webp",
+    cards: [
+    {
+      title: "Experience",
+      subtitle: `${yearsExperience}+ years in the industry`,
+      description:
+        "I have worked as a developer in automotive companies and consultancies, building scalable solutions, integrations, and robust APIs. I have experience working in collaborative teams focused on code quality."
+      ,iconName: "portfolio"
+      },
+    {
+      title: "Education",
+      subtitle: "Systems Engineer",
+      description:
+        "I graduated in September 2024 with a degree in Systems Engineering, presenting a final project focused on a school payment system (.NET Core + Angular)."
+      , iconName: "hat"
+      },
+    {
+      title: "Critical Thinking",
+      subtitle: "Strategic and objective analysis",
+      description:
+        "Ability to evaluate information logically and make well-founded decisions that bring value to both projects and teams."
+      ,iconName: "brain"
+      },
+    {
+      title: "Collaborative Culture",
+      subtitle: "Positive and motivating attitude",
+      description:
+        "I believe that working with passion and good energy boosts creativity and strengthens teams, fostering a more human and productive work environment."
+    ,iconName: "happy"
+      }
+  ]
   },
   sectionTitles: {
     projects: "Projects",
