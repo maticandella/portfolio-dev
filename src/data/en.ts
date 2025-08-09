@@ -5,7 +5,7 @@ const yearsExperience = new Date().getFullYear() - startYear;
 export const SITE_CONFIG: SiteConfig = {
   title: "My Portfolio",
   author: "Matías Candella",
-  description: "",
+  description: "Portfolio de Matás Candella, desarrollador fullstack.",
   lang: "en",
   siteLogo: "/maticandella.webp",
   navLinks: [
@@ -38,15 +38,15 @@ export const SITE_CONTENT: SiteContent = {
   <br /><br />
   I enjoy designing scalable systems and optimizing processes, but also
   <span class="text-primary font-semibold">
-    creating clear, functional, and accessible interfaces
-  </span>.
+    creating clear, functional, and accessible interfaces.
+  </span>
   <span class="text-primary font-semibold">Clean code</span>,
   <span class="text-primary font-semibold">solid architecture</span>,
   and <span class="text-primary font-semibold">real impact</span>
   are the things I value most in every project.
 `,
     email: "matiascandella@hotmail.com",
-    buttons:  ["Download CV", "Contact Me"]
+    buttons:  ["", "Contact Me"]
   },
   experience: [
     // Still commented out

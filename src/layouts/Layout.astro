@@ -16,7 +16,7 @@ const {
   author,
   socialLinks,
   socialImage,
-  canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
+  canonicalURL,
 } = config;
 ---
 
@@ -27,7 +27,12 @@ const {
     <meta name="description" content={description} />
     <meta name="author" content={author} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="canonical" href={canonicalURL} />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.css"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
@@ -36,6 +41,19 @@ const {
     <main class="max-w-6xl px-5 mx-auto">
       <slot />
     </main>
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.js"></script>
+
+    <script is:inline>
+      document.addEventListener("DOMContentLoaded", () => {
+        AOS.init({
+          offset: 120,
+          duration: 400,
+          once: false,
+        });
+      });
+    </script>
     <Footer author={author} socialLinks={socialLinks} />
   </body>
 </html>

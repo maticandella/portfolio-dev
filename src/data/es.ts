@@ -6,7 +6,7 @@ export const SITE_CONFIG: SiteConfig = {
   title: "Mi Porfolio",
   author: "Matías Candella",
   description:
-    "",
+    "Portfolio de Matás Candella, desarrollador fullstack.",
   lang: "es",
   siteLogo: "/maticandella.webp",
   navLinks: [

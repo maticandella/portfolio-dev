@@ -9,13 +9,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "5.12.8",
     "@fontsource-variable/gabarito": "5.1.0",
-    "@fontsource/be-vietnam-pro": "5.1.0"
+    "@fontsource/be-vietnam-pro": "5.1.0",
+    "astro": "5.12.8"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.3"
+    "autoprefixer": "10.4.21",
+    "postcss": "8.5.6",
+    "tailwindcss": "3.4.3"
   }
 }

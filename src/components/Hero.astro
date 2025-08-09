@@ -6,7 +6,12 @@ type Props = HeroProps;
 const { name, specialty, summary, email, buttons } = Astro.props;
 ---
 
-<section class="py-24 md:py-32 min-h-screen" id="#hero">
+<section
+  class="py-24 md:py-32 min-h-screen"
+  id="#hero"
+  data-aos="flip-up"
+  data-aos-duration="2000"
+>
   <h1
     class="text-7xl font-serif mb-1.5 sm:text-8xl md:text-9xl md:mb-0 text-white font-bold tracking-tightest"
   >
@@ -61,23 +66,25 @@ const { name, specialty, summary, email, buttons } = Astro.props;
     </a>
 
     <!-- Botón Descargar CV -->
-    <a
-      class="inline-flex items-center gap-2 text-sm w-full md:w-auto justify-center px-4 py-2 md:py-4 md:px-8 text-white font-medium leading-5 border border-primary rounded-2xl md:rounded-full hover:bg-primary hover:text-white"
-      href="/docs/CV - MATIAS CANDELLA.pdf"
-      download
-    >
-      <svg
-        class="w-5 h-5"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-      >
-        <path
-          d="M16 2L21 7V21.0082C21 21.556 20.5551 22 20.0066 22H3.9934C3.44476 22 3 21.5447 3 21.0082V2.9918C3 2.44405 3.44495 2 3.9934 2H16ZM12 11.5C13.3807 11.5 14.5 10.3807 14.5 9C14.5 7.61929 13.3807 6.5 12 6.5C10.6193 6.5 9.5 7.61929 9.5 9C9.5 10.3807 10.6193 11.5 12 11.5ZM7.52746 17H16.4725C16.2238 14.75 14.3163 13 12 13C9.68372 13 7.77619 14.75 7.52746 17Z"
-        ></path>
-      </svg>
-      {buttons[0]}
-    </a>
+    {
+      buttons?.[0] && buttons[0].trim() !== "" && (
+        <a
+          class="inline-flex items-center gap-2 text-sm w-full md:w-auto justify-center px-4 py-2 md:py-4 md:px-8 text-white font-medium leading-5 border border-primary rounded-2xl md:rounded-full hover:bg-primary hover:text-white"
+          href="/docs/CV - MATIAS CANDELLA.pdf"
+          download
+        >
+          <svg
+            class="w-5 h-5"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M16 2L21 7V21.0082C21 21.556 20.5551 22 20.0066 22H3.9934C3.44476 22 3 21.5447 3 21.0082V2.9918C3 2.44405 3.44495 2 3.9934 2H16ZM12 11.5C13.3807 11.5 14.5 10.3807 14.5 9C14.5 7.61929 13.3807 6.5 12 6.5C10.6193 6.5 9.5 7.61929 9.5 9C9.5 10.3807 10.6193 11.5 12 11.5ZM7.52746 17H16.4725C16.2238 14.75 14.3163 13 12 13C9.68372 13 7.77619 14.75 7.52746 17Z" />
+          </svg>
+          {buttons[0]}
+        </a>
+      )
+    }
 
     <!-- Botón Contáctame -->
     <a
