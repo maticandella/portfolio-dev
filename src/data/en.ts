@@ -5,7 +5,7 @@ const yearsExperience = new Date().getFullYear() - startYear;
 export const SITE_CONFIG: SiteConfig = {
   title: "My Portfolio",
   author: "Matías Candella",
-  description: "Portfolio de Matás Candella, desarrollador fullstack.",
+  description: "Portfolio of Matías Candella, fullstack developer.",
   lang: "en",
   siteLogo: "/maticandella.webp",
   navLinks: [
