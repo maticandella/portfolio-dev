@@ -25,12 +25,21 @@ const { projects, title, buttonsProject } = Astro.props;
         <div class="bg-white dark:bg-neutral-900 rounded-3xl shadow-lg overflow-hidden flex flex-col h-full transition-all duration-500 hover:scale-105">
           {/* Imagen principal */}
           <div class="w-full h-56 sm:h-64">
-            <img
-              src={project.image}
-              alt={project.name}
-              class="w-full h-full object-cover object-center"
-              loading="lazy"
-            />
+            {project.imageFit === "contain" ? (
+              <img
+                src={project.image}
+                alt={project.name}
+                class="w-full h-full object-contain"
+                loading="lazy"
+              />
+            ) : (
+              <img
+                src={project.image}
+                alt={project.name}
+                class="w-full h-full object-cover object-center"
+                loading="lazy"
+              />
+            )}
           </div>
 
           {/* Contenido */}

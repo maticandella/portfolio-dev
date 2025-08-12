@@ -42,6 +42,7 @@ export interface ProjectProps {
   name: string;
   summary: string;
   image: string;
+  imageFit?: string;
   linkPreview?: string;
   linkSource?: string;
   linkApis?: string;

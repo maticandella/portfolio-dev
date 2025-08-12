@@ -7,10 +7,11 @@ export const TECH_MAP = {
   "Node.js": { icon: "/icons/nodejs.svg", name: "Node.js" },
   PostgreSQL: { icon: "/icons/postgresql.svg", name: "PostgreSQL" },
   Swagger: { icon: "/icons/swagger.svg", name: "Swagger" },
-  ".NET": { icon: "/icons/.NET.svg", name: ".NET Core" },
+  "NET": { icon: "/icons/NET.svg", name: ".NET Core" },
   "Nest.js": { icon: "/icons/nestjs.svg", name: "Nest.js" },
   SqlServer: { icon: "/icons/sqlserver.svg", name: "SqlServer" },
   Docker: { icon: "/icons/docker.svg", name: "Docker" },
 Vercel: { icon: "/icons/vercel.svg", name: "Vercel" },
 GitHub: { icon: "/icons/github.svg", name: "GitHub" },
-HTML5: { icon: "/icons/html.svg", name: "HTML5" }};
+HTML5: { icon: "/icons/html.svg", name: "HTML5" },
+Bootstrap: { icon: "/icons/bootstrap.svg", name: "Bootstrap" }};

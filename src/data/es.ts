@@ -101,6 +101,25 @@ export const SITE_CONTENT: SiteContent = {
       }
     },
     {
+  name: "Santa María Goretti",
+  summary: "Aplicación web desarrollada para la gestión administrativa de una escuela secundaria. Incluye panel de control, gestión de cobranzas, alumnos, cuotas y transacciones de caja diaria.",
+  type: "Proyecto Freelance",
+  image: "/smg.webp",
+  imageFit: "contain",
+  technologies: ["NET", "SqlServer", "Angular", "TypeScript", "Bootstrap"],
+  modal: {
+    summary: "Aplicación web para la gestión administrativa de una escuela secundaria, desarrollada como trabajo final para recibirme de Ingeniero en Sistemas. Realizada en equipo junto a dos compañeros, abarcando backend, frontend y base de datos.",
+    text: [
+      "Desarrollo backend en .NET Core con Entity Framework y SQL Server, optimizando consultas para mayor rendimiento.",
+      "Frontend en Angular con TypeScript y estilos implementados con Bootstrap para garantizar una experiencia intuitiva y responsive.",
+      "Implementación de funcionalidades clave como registro de pagos, control de deudas y generación de reportes.",
+      "Diseño e implementación del panel de control y gestión de alumnos, cuotas y cobranzas.",
+      "Impresión de recibos y reportes de gestión.",
+      "Trabajo colaborativo en equipo utilizando control de versiones y buenas prácticas de desarrollo."
+    ]
+  }
+},
+    {
       name: "Tu Momento",
       summary: "Invitación digital personalizada para evento social, diseñada con enfoque moderno, responsive y adaptable a distintos estilos de celebración. Ideal para reutilizar como plantilla freelance.",
       linkPreview: "https://tumomento.vercel.app/",

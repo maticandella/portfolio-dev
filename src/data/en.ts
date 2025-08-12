@@ -99,6 +99,25 @@ export const SITE_CONTENT: SiteContent = {
       }
     },
     {
+  name: "School Management System",
+  summary: "Web application developed as a final degree project for the administrative management of a high school. Includes dashboard, collections management, students, fees, and daily cash transactions.",
+  type: "Freelance Project",
+  image: "/smg.webp",
+  imageFit: "contain",
+  technologies: ["NET", "SqlServer", "Angular", "TypeScript", "Bootstrap"],
+  modal: {
+    summary: "Web application for the administrative management of a high school, developed as the final project for my Systems Engineering degree. Created in collaboration with two teammates, covering backend, frontend, and database.",
+    text: [
+      "Backend development in .NET Core with Entity Framework and SQL Server, optimizing queries for better performance.",
+      "Frontend in Angular with TypeScript and Bootstrap styles to ensure an intuitive and responsive experience.",
+      "Implementation of key features such as payment registration, debt control, and report generation.",
+      "Design and implementation of the dashboard and management of students, fees, and collections.",
+      "Printing of receipts and reports in PDF format.",
+      "Collaborative teamwork using version control and software development best practices."
+    ]
+  }
+},
+    {
       name: "Tu Momento",
       summary:
         "Custom digital invitation for a social event, designed with a modern and responsive approach, adaptable to different celebration styles. Ideal for reuse as a freelance template.",
