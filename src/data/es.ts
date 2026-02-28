@@ -58,6 +58,28 @@ export const SITE_CONTENT: SiteContent = {
   buttonsProject: ["Leer más", "APIs", "Código", "Demo"],
   projects: [
     {
+      name: "Smart Portfolio Strategy",
+      summary: "Landing page desarrollada para un asesor financiero argentino radicado en Francia. Me encargué del diseño, arquitectura y desarrollo completo, con foco en conversión, soporte multilingüe y procesamiento de pagos internacional.",
+      linkPreview: "https://smartportfoliostrategy.com/",
+      image: "/smartporfoliostrategy.webp",
+      technologies: ["NextJS", "TypeScript", "Tailwind", "Stripe", "MercadoPago", "Vercel"],
+      type: "Proyecto Freelance",
+      modal: 
+      {
+        summary: "Smart Portfolio Strategy es la landing page de Juan Ignacio Torriconi, asesor financiero con base en Francia que asesora a clientes de LATAM y Europa. El objetivo era construir una plataforma profesional orientada a la conversión, que transmitiera confianza en el sector financiero y que funcionara sin fricciones para usuarios de distintas regiones y dispositivos.",
+        text: ["Participo de reuniones con el cliente donde se define la propuesta de valor, la estructura de secciones y el flujo de conversión orientado a la reserva de sesiones de asesoría.",
+      "Desarrollo la landing con Next.js 14 y TypeScript, aplicando una arquitectura de componentes modular, renderizado optimizado y buenas prácticas de código mantenible.",
+      "Implemento soporte multilingüe completo (español, inglés y francés) con detección de idioma y navegación fluida entre versiones, apuntando a audiencias de LATAM y Europa.",
+      "Integro doble procesamiento de pagos: Stripe para clientes de Europa y Estados Unidos, y MercadoPago para clientes latinoamericanos, con lógica de ruteo por región.",
+      "Integro Cal.com para el sistema de reservas de sesiones, con webhooks para sincronización de eventos y notificaciones automáticas.",
+      "Configuro servicios de email transaccional con Resend, en coexistencia con Google Workspace para la comunicación profesional del cliente.",
+      "Optimizo la performance con lazy loading, imágenes en formato WebP/AVIF y auditorías continuas de Core Web Vitals con Lighthouse, priorizando la experiencia en mobile y conexiones lentas.",
+      "Potencio el SEO mediante estructura semántica HTML5, metadatos dinámicos por idioma, Open Graph y configuración de rutas estáticas en Vercel.",
+      "Entrego documentación de handover completa con credenciales, recomendaciones de seguridad y guías de uso de cada servicio integrado."]
+      }
+    ,
+    },
+    {
       name: "Blue Planet",
       summary: "Sitio web desarrollado para una empresa francesa del sector geoespacial. Me ocupé del diseño, estructura y desarrollo completo para comunicar su propuesta de valor, servicios y visión empresarial.",
       linkPreview: "https://www.blueplanet-sat.com/",

@@ -14,4 +14,7 @@ export const TECH_MAP = {
 Vercel: { icon: "/icons/vercel.svg", name: "Vercel" },
 GitHub: { icon: "/icons/github.svg", name: "GitHub" },
 HTML5: { icon: "/icons/html.svg", name: "HTML5" },
-Bootstrap: { icon: "/icons/bootstrap.svg", name: "Bootstrap" }};
+Bootstrap: { icon: "/icons/bootstrap.svg", name: "Bootstrap" },
+NextJS: { icon: "/icons/NextJS.svg", name: "NextJS" },
+"Stripe": { icon: "/icons/stripe.svg", name: "Stripe" },
+MercadoPago: { icon: "/icons/mercadopago.svg", name: "MercadoPago" }};
